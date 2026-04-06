@@ -53,7 +53,7 @@ defmodule WordlexTest do
       assert Wordlex.get_feedback("vocês", "voces") == [:ok, :ok, :ok, :ok, :ok]
     end
 
-    test "check special characters are the same" do
+    test "special characters match when identical" do
       special_characters = "±!\"#$%&/()=?*\""
 
       assert Wordlex.get_feedback(special_characters, special_characters) == [
@@ -74,24 +74,24 @@ defmodule WordlexTest do
              ]
     end
 
-    test "check special characters contains :ok" do
+    test "special characters return :miss for non-matching positions" do
       special_characters = "±!\"#$%&/()=?*\""
 
       assert Wordlex.get_feedback(special_characters, "±") == [
                :ok,
-               :exists,
-               :exists,
-               :exists,
-               :exists,
-               :exists,
-               :exists,
-               :exists,
-               :exists,
-               :exists,
-               :exists,
-               :exists,
-               :exists,
-               :exists
+               :miss,
+               :miss,
+               :miss,
+               :miss,
+               :miss,
+               :miss,
+               :miss,
+               :miss,
+               :miss,
+               :miss,
+               :miss,
+               :miss,
+               :miss
              ]
     end
   end

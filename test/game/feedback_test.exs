@@ -46,8 +46,12 @@ defmodule Wordlex.Game.FeedbackTest do
     end
 
     test "Guesses with less characters should be a :miss" do
-      # For cases where there's less characters for guesses the nill will be counted as :miss
+      # For cases where there's less characters for guesses the nil will be counted as :miss
       assert Feedback.check("abc", "a") == [:ok, :miss, :miss]
+    end
+
+    test "Empty guesses should return a string of :miss" do
+      assert Feedback.check("abc", "") == [:miss, :miss, :miss]
     end
   end
 end

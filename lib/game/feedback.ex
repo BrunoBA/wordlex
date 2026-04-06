@@ -54,7 +54,7 @@ defmodule Wordlex.Game.Feedback do
 
     new_guess =
       Enum.map(word_with_index, fn {letter, index} ->
-        guessed_word = Enum.at(guess, index)
+        guessed_word = Enum.at(guess, index, :miss)
 
         case guessed_word == letter do
           true -> :ok
