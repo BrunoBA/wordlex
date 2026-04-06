@@ -22,7 +22,7 @@ defmodule Wordlex.MixProject do
   defp package do
     [
       licenses: ["MIT"],
-      links: %{"GitHub" => "https://github.com/you/wordlex"}
+      links: %{"GitHub" => "https://github.com/BrunoBA/wordlex"}
     ]
   end
 
